@@ -1,0 +1,26 @@
+<div class='bg' style="color:white">
+<div class="col-md-6 col-md-offset-3" >
+<%= bootstrap_form_with scope: :article, url: articles_path, local: true do |f| %>
+
+ <p>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.text_area :text %>
+  </p>
+  
+		
+
+  <p>
+    <div style="color:#000"><%= f.submit %></div>
+  </p>
+  <div>
+   
+    <%= f.file_field :image %>
+	<%= f.hidden_field :image_cache %>
+  </div>
+  <%= render 'shared/errors', object: @article %>
+<% end %>
+	
+</div>
+ </div>

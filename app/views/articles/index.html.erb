@@ -1,0 +1,25 @@
+  <% @articles.each do |article| %>
+  <table class="table table-striped">
+<p>
+ <h1> <arttitle>
+  <%= article.title %>
+	</arttitle></h1>
+</p>
+
+<p>
+   <blockquote>
+  <%= article.text %>
+   <%= link_to 'Далее...', article_path(article) %>
+  </blockquote>
+  
+</p>
+<td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+</table>
+
+  <% end %>
+  <div class="btn btn-sm blue">
+  <%= link_to 'Новая статья', new_article_path %>
+  </div>
+

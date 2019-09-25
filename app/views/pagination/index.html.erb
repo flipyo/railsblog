@@ -1,0 +1,8 @@
+.main-container
+  h1.page-header = t 'posts.header'
+  
+  .posts-list
+    = render partial: 'partials/posts', locals: { posts: @posts }
+
+  # 'container' - where we want to load next page of posts
+  = render partial: 'partials/pagination', locals: { endpoint: @endpoint, page_count: @page_count, container: '.posts-list' }

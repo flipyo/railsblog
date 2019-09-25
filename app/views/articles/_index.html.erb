@@ -1,0 +1,33 @@
+  <% @articles.each do |article| %>
+  <table class="table table-striped">
+<p>
+ <h2> <arttitle>
+  <%= article.title %>
+	</arttitle></h2>
+</p>
+
+
+   <blockquote>
+  <%= article.text %>
+  <%= image_tag(article.image.thumb.url, alt: 'Image' ) if article.image? %>
+  
+
+
+  </blockquote></br>
+  
+  <% if article.autor == "Admin" %>
+  <arttitle style="color:red">
+  Автор: <%= article.user.name %>
+  <arttitle>
+  <% else %>
+  <arttitle>
+  Автор: <%= article.user.name%>
+  <% end %>
+  <arttitle>
+  </arttitle>
+
+</table>
+
+  <% end %>
+ <div style="color:white; padding-left:40%;"> <%= will_paginate @articles %></div>
+
