@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 def new
-@article = Article.new
+@article = Article.newTest
 end
 def create 
 @article = current_user.articles.build(article_params)
