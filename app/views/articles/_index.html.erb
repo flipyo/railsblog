@@ -8,9 +8,11 @@
 
 
    <blockquote>
+   <%= link_to(image_tag(article.image.thumb.url, alt: 'Image'), article.image.url, target: '_blank') if article.image? %>
   <%= article.text %>
-  <%= image_tag(article.image.thumb.url, alt: 'Image' ) if article.image? %>
+
   
+
 
 
   </blockquote></br>
